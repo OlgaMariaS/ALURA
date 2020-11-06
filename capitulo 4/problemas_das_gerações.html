@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+
+<HTML lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>Alura</title>
+    </head>
+    <body>
+        <h1>O Número de gerações </h1>
+        <script>
+            var anoDescoberta = 1500;
+            var mediaGeração = 28;
+            var anoAtual = 2020;
+
+            function pulaLinha (){
+                document.write ("<br>");
+            }
+            function mostra (numeroGeracao){
+                document.write(numeroGeracao);
+                pulaLinha ();
+            }
+
+            mostra ("O número de gerações que passaram desde a descoberta foi:");
+         
+            mostra (Math.round((anoAtual - anoDescoberta)/mediaGeração));
+
+        </script>
+    </body>
+</HTML>

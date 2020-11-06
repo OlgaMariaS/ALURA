@@ -8,12 +8,26 @@
     <body>
         <h1>Diferença de idade minha e dos meus irmãos</h1>
         <script>
-            
+
+        var nascOsvaldo = 2001;
+        var nascOlga = 2002;
+        var nascLizi = 2007;
+        var nascBrenda = 2016;
+
+
         function pulaLinha () { 
+            document.write ("<br>");
         }   
-        function mostra (parametro) {  
+        function mostra (diferenca) {  
+            document.write ("A diferença das idade: " + diferenca);
         }                             
-    
+        
+        mostra(nascOlga - nascOsvaldo);
+        pulaLinha ();
+        mostra(nascLizi - nascOlga);
+        pulaLinha ();
+        mostra(nascBrenda - nascOlga);
+
         </script>
     </body>
 </HTML>
