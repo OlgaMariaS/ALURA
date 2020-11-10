@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+
+<HTML lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>Alura</title>
+    </head>
+    <body>
+        <h1>IMC</h1>
+        <script>
+            function pulaLinha (){
+                document.write ("<br>");
+            }
+            function mostra (){
+                document.write();
+                pulaLinha ();
+            }
+            function calculaImc(altura, peso) {
+                var imc = peso / (altura * altura);
+                mostra("O imc calculado é " + imc);
+            }
+        
+            calculaImc(1.50, 50);
+        </script>
+    </body>
+</HTML>
