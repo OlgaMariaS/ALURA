@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+
+<HTML lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>Alura</title>
+    </head>
+    <body>
+        <h1>Retorno de funções</h1>
+        <script>
+            function pulaLinha (){
+                document.write ("<br>");
+            }
+            function mostra (frase){
+                document.write(frase);
+                pulaLinha ();
+            }
+            function calculaImc(altura, peso) {
+                var imc = peso / (altura * altura);
+                return imc; //return=pedindo uma resposta pra função obrigatória, esta resp é dada onde chama a função
+            }//ou pode ser expressão EX: return peso / (altura * altura)
+            var amigo1= calculaImc(1.50, 50);
+            var amigo2= calculaImc(1.83, 120);
+            
+            mostra("O imc calculado é " + Math.round(amigo1));
+            mostra("O imc calculado é " + Math.round(amigo2));
+
+            var somaImc = calculaImc(1.50, 50) + calculaImc(1.83, 120);
+
+            mostra("A soma dos imc calculado é " + Math.round(somaImc));
+        </script>
+    </body>
+</HTML>
