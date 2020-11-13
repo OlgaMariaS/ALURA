@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+
+<HTML lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>Alura</title>
+    </head>
+    <body>
+        <h1>Condição no IMC</h1>
+        <script>
+            function pulaLinha (){
+                document.write ("<br>");
+            }
+            function mostra (frase){
+                document.write(frase);
+                pulaLinha ();
+            }
+            function calculaImc(altura, peso) {
+                var imc = peso / (altura * altura);
+                return imc
+            }
+
+            var nome = prompt("Qual seu nome?");
+            var altura = parseInt (prompt("Qual sua altura? " + nome));
+            var peso = parseInt (prompt("Qual seu peso? " + nome));
+
+            imc = calculaImc(altura, peso);
+
+            mostra(nome + "seu IMC está: " + Math.round(imc));
+
+            if (imc < 19){
+                mostra("Seu Imc está abaixo do padrão");
+            }
+            if (imc > 35) {
+                mostra("Seu IMC está fora do padrão");
+            }
+            if (imc < 19 && imc > 35 ) {
+                mostra("Seu IMC está otimo!");
+            }
+           
+        </script>
+    </body>
+</HTML>
