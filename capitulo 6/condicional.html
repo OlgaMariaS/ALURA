@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+
+<HTML lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>Alura</title>
+    </head>
+    <body>
+        <h1>Calculo dos times</h1>
+        <script>
+            function pulaLinha (){
+                document.write ("<br>");
+            }
+            function mostra (frase){
+                document.write(frase);
+                pulaLinha ();
+            }
+
+            var pontuacaoAntiga = parseInt(prompt("Qual a pontuação antiga do seu time?"));
+
+            var vitoria = parseInt(prompt("Qual as vitorias do seu time?"));
+            var empates = parseInt(prompt("Qual o numero de empates?"));
+
+            var pontos = (vitoria * 3) + empates;
+
+            if (pontos > pontuacaoAntiga){
+                mostra("seu time está melhor este ano!");
+            }else{
+                mostra("seu time está igual ou pior que ano passado!");
+            }
+
+        </script>
+    </body>
+</HTML>

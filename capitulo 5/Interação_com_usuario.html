@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+
+<HTML lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>Alura</title>
+    </head>
+    <body>
+        <h1>Condições em IMC</h1>
+        <script>
+            function pulaLinha (){
+                document.write ("<br>");
+            }
+            function mostra (frase){
+                document.write(frase);
+                pulaLinha ();
+            }
+            function calculaImc(altura, peso) {
+                return peso / (altura * altura);
+            }
+
+            var nome = prompt("Qual seu nome?");
+            var altura = parseInt(prompt("Qual sua altura? " + nome));
+            var peso = parseInt (prompt("Qual seu peso? " + nome));
+
+            var imc = calculaImc(altura, peso);
+
+            mostra(nome + "seu IMC está: " + Math.round(imc));
+
+        </script>
+    </body>
+</HTML>
