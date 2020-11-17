@@ -6,7 +6,7 @@
         <title>Alura</title>
     </head>
     <body>
-        <h1>Jogo de Adivinhação</h1>
+        <h1>Ano da copa</h1>
         <script>
             function pulaLinha (){
                 document.write ("<br>");
@@ -15,17 +15,16 @@
                 document.write(frase);
                 pulaLinha ();
             }
-          
-            var sorteado = Math.round (Math.random () * 10);
-         
-            var aposta = parseInt(prompt('Qual seu numero apostado?'));
+            
+            var anoAtual = parseInt(prompt("Ano atual: "));
+            var anoCopa = 1930;
 
-            if (aposta == sorteado){
-                mostra("Parabéns sortudo, você acertou");
-            }else {
-                mostra("Eita, não foi dessa vez");
+            while (anoCopa <= anoAtual) {
+                mostra("Ano da copa foi: " + anoCopa);
+                anoCopa = anoCopa + 4;
             }
-           
+            mostra("Fim");
+
         </script>
     </body>
 </HTML>

@@ -15,9 +15,25 @@
                 document.write(frase);
                 pulaLinha ();
             }
-          
-       
+            function sorteio (numero){
+                var sorteado = Math.round (Math.random() * numero);
+                return sorteado
+            }
+
+            var numero = parseInt(prompt("Digite um numero, para de 0 a __ haver um sorteio"));
+            var aposta = parseInt(prompt("Insira o numero apostado"));
+
+            if(aposta == sorteado){
+                mostra("Opaa você ganhou");
+            }
+            if( aposta < sorteado) {
+                mostra("Sem sorte hoje, o número foi maior é: " + sorteado);
+            }
+            if(aposta > sorteado){
+                mostra("Sem sorte hoje, o número foi menor é: " + sorteado);
+            }
            
+            
         </script>
     </body>
 </HTML>
