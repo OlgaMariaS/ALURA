@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+
+<HTML lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>Alura</title>
+    </head>
+    <body>
+        <h1>Numeros pares</h1>
+        <script>
+            function pulaLinha (){
+                document.write ("<br>");
+            }
+            function mostra (frase){
+                document.write(frase);
+                pulaLinha ();
+            }
+            var par = 0;
+
+            while (par <= 100) {
+                mostra(par);
+                par = par + 2;
+            }
+            
+        </script>
+    </body>
+</HTML>

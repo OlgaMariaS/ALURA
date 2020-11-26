@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+
+<HTML lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>Alura</title>
+    </head>
+    <body>
+        <h1>Os numeros 33 e 37 não podem</h1>
+        <script>
+            function pulaLinha (){
+                document.write ("<br>");
+            }
+            function mostra (frase){
+                document.write(frase);
+                pulaLinha ();
+            }
+
+            var numero = 30;
+
+            while (numero <= 40) {
+                if (numero != 33  && numero != 37){
+                mostra(numero);
+                }else{
+                    mostra("Este numero não pode " + numero);
+                }
+            numero = numero+1
+            }
+
+        </script>
+    </body>
+</HTML>
