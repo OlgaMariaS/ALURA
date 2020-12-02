@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+
+<HTML lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>Alura</title>
+    </head>
+    <body>
+        <h1>Login e senha</h1>
+        <script>
+            function pulaLinha (){
+                document.write ("<br>");
+            }
+            function mostra (frase){
+                document.write(frase);
+                pulaLinha ();
+            }
+
+            var loginCadastrado = "alura";
+            var senhaCadastrada = "alura321";
+
+            var tentativasAcesso = 3;
+            var i = 1;
+
+            while (i <= tentativasAcesso){
+            
+            var loginInformado = prompt("Informe seu login");
+            var senhaInformada = prompt("Informe sua senha");
+
+            if( loginCadastrado == loginInformado && senhaCadastrada == senhaInformada ) {
+
+                alert("Bem-vindo ao sistema " + loginInformado);
+            } else {
+
+                alert("Login inválido. Tente novamente");
+            }
+                i++;
+            }
+        </script>
+    </body>
+</HTML>
