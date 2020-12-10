@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+
+<HTML lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>Alura</title>
+    </head>
+    <body>
+        <h1>tTabuada</h1>
+        <script>
+            function pulaLinha (){
+                document.write ("<br>");
+            }
+            function mostra (frase){
+                document.write(frase);
+                pulaLinha ();
+            }
+
+            var multiplicador = parseInt(prompt("Digite o valor a ser multiplicado"));
+
+            for (i=0; i < 10; i++){
+                mostra(multiplicador * i);
+            }
+            mostra("FIM");
+
+        </script>
+    </body>
+</HTML>

@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+
+<HTML lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>Alura</title>
+    </head>
+    <body>
+        <h1>Media das idades familiares</h1>
+        <script>
+            function pulaLinha (){
+                document.write ("<br>");
+            }
+            function mostra (frase){
+                document.write(frase);
+                pulaLinha ();
+            }
+
+            var totalFamiliares = parseInt(prompt("Quantas pessoas tem na Familia?"));
+            var totalIdades = 0;
+
+            for (i=0; i < totalFamiliares; i++){
+                var idade = parseInt(prompt("Qual a idade?"));
+                totalIdades = totalIdades + idade;
+            }
+            var mediaIdades = totalIdades/totalFamiliares;
+
+            mostra("A media das idades é: " + mediaIdades);
+
+        </script>
+    </body>
+</HTML>
