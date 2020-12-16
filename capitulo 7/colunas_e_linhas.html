@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+
+<HTML lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>Alura</title>
+    </head>
+    <body>
+        <h1>Colunas e Linhas</h1>
+        <script>
+            function pulaLinha (){
+                document.write ("<br>");
+            }
+            function mostra (frase){
+                document.write(frase);
+            }
+
+            for (linhas = 0; linhas < 5; linhas++){
+                for (coluna = 0; coluna < 10; coluna++){
+                    mostra("*");
+                }
+                pulaLinha();
+            }
+
+        </script>
+    </body>
+</HTML>

@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+
+<HTML lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>Alura</title>
+    </head>
+    <body>
+        <h1>Jogo de Adivinhação</h1>
+        <script>
+            function pulaLinha (){
+                document.write ("<br>");
+            }
+            function mostra (frase){
+                document.write(frase);
+                pulaLinha ();
+            }
+          
+            var sorteado = Math.round (Math.random () * 10);
+
+            for (var i = 1; i<=3; i++) {
+            
+            var aposta = parseInt(prompt('Qual seu numero apostado?'));
+        
+            if (aposta == sorteado){
+                mostra("Parabéns sortudo, você acertou");
+                break;
+            }else {
+                mostra("Eita, não foi dessa vez o numero sorteado foi " + sorteado);
+            }
+            }
+        </script>
+    </body>
+</HTML>
