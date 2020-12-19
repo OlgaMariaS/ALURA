@@ -27,27 +27,18 @@
         }
 
         var input = document.querySelector("input");
-        var sorteado = Math.round(Math.random() * 10);
+
+        var sorteado = [8,4,6];
         input.focus();
 
-        let tentativas = 0
         function sorteio() {
-            const aposta = parseInt(input.value)
             if (aposta == sorteado) {
                 mostra('Parabéns. Você acertou!')
             } else {
-                tentativas++
-                alert(`Você errou e ainda tem ${3 - tentativas} tentativas`)
-                aposta > sorteado ? alert('Tente um número menor') : alert('Tente um número maior')
-                input.value = "";//deixa o input em branco na caixinha
-                input.focus();//deixa o mouse na caixinha pra digitar
+               mostra ("Tente novamente...")
             }
-            if (tentativas == 3) {
-                mostra('Game Over! Você errou em todas as tentativas!')
-                tentativas = 0
-            }
+            
         }
-
         var button = document.querySelector("button");
 
         button.onclick = sorteio; //onlick == em um clique
