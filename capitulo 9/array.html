@@ -14,7 +14,6 @@
         campo abaixo e vamos ver se acerta ou erra</p>
 
     <input />
-
     <button>ADIVINHAR</button>
 
     <script>
@@ -27,18 +26,34 @@
         }
 
         var input = document.querySelector("input");
-
-        var sorteado = [8,4,6];
         input.focus();
 
+        var sorteado = [8, 4, 6];//array 
+        //primeira posição de array é 0.
+
+        //array.length = pergunta ao array quantas posições ele tem
         function sorteio() {
-            if (aposta == sorteado) {
-                mostra('Parabéns. Você acertou!')
-            } else {
-               mostra ("Tente novamente...")
+
+            var encontrado = false;
+
+            for (var posicao = 0; posicao < sorteado.length; posicao++) {
+                if (input.value == sorteado[posicao]) {
+                    mostra('Parabéns. Você acertou!')
+
+                    encontrado = true;//caso acerte o encontrado passa a ser verdadeiro
+
+                    break; //acertando ele para de mostrar erro
+                }
+
+                if (encontrado == false) {
+                    mostra("Voce erro!!! Azarão");
+                    break;
+                }
             }
-            
+            input.value = "";
+            input.focus();
         }
+
         var button = document.querySelector("button");
 
         button.onclick = sorteio; //onlick == em um clique
