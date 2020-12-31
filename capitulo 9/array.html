@@ -44,12 +44,10 @@
 
                     break; //acertando ele para de mostrar erro
                 }
-
-                if (encontrado == false) {
-                    mostra("Voce erro!!! Azarão");
-                    break;
-                }
             }
+            if (encontrado == false) {
+                    mostra("Voce erro!!! Azarão");
+                }
             input.value = "";
             input.focus();
         }
