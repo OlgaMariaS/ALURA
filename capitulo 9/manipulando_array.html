@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+
+<HTML lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <title>Alura</title>
+</head>
+
+<body>
+    <h1>Jogo de Adivinhação com botões</h1>
+
+    <p>vamos fazer um jogo de adivinhação, caso insira o numero no
+        campo abaixo e vamos ver se acerta ou erra</p>
+
+    <input />
+    <button>ADIVINHAR</button>
+
+    <script>
+        function pulaLinha() {
+            document.write("<br>");
+        }
+        function mostra(frase) {
+            document.write(frase);
+            pulaLinha();
+        }
+        function sorteando() {
+
+            return Math.round( Math.random()*10 );
+            //funcao cria numeros aleatorios de 0 a 10 
+        }
+        function sorteiaNumeros(quantidade) {
+            var segredos = []; //var local
+            var i = 0;
+            while (i < quantidade) {
+
+                var aleatorio = sorteando();//atribuido a funcao a uma var
+                var achou = false;//booleano
+
+                if (aleatorio !== 0){
+
+                    for (var posicao; posicao < segredos.length; posicao++){//crado for para varrer as posicoes do array
+                        if (segredos(posicao) == aleatorio){
+                        achou == true;//caso algum numero criado seja igual a uma posicao do array ele e descartado
+                        break;
+                         }
+                    }
+
+                    if (achou == false){
+                    segredos.push(aleatorio);//atribui somente numeros que nao sejam iguais aos do array
+                    i++;
+                    }
+                }
+            }
+
+            return segredos;
+        }
+
+        var input = document.querySelector("input");
+        input.focus();
+
+        var sorteado = sorteiaNumeros(3);
+        //primeira posição de array é 0.
+
+        //array.length = pergunta ao array quantas posições ele tem
+        function sorteio() {
+
+            var encontrado = false;
+
+            for (var posicao = 0; posicao < sorteado.length; posicao++) {
+                if (input.value == sorteado[posicao]) {
+                    mostra('Parabéns. Você acertou!')
+
+                    encontrado = true;//caso acerte o encontrado passa a ser verdadeiro
+
+                    break; //acertando ele para de mostrar erro
+                }
+            }
+            if (encontrado == false) {
+                    mostra("Voce erro!!! Azarão");
+                }
+            input.value = "";
+            input.focus();
+        }
+
+        var button = document.querySelector("button");
+
+        button.onclick = sorteio; //onlick == em um clique
+
+    </script>
+</body>
+
+</HTML>
