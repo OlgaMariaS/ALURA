@@ -1,0 +1,38 @@
+<meta charset="UTF-8">
+
+<h1>Receitas do OLGA</h1>
+
+<script>
+    var ingredientes = [];
+
+    var quantidade = parseInt(prompt("Quantos ingredientes você vai adicionar?"));
+
+    var contador = 1;
+
+    while( contador <= quantidade) {
+
+        var ingredienteNovo = prompt("Informe o ingrediente " + contador);
+        var achou = false;
+
+        for (var posicao = 0; posicao < ingredientes.length; posicao++) {
+
+            if (ingredientes[posicao] == ingredienteNovo) {
+
+                achou = true;
+
+                alert ('Ingrediente repetido, insira outro');
+
+                break;
+        }
+        }
+        if (achou == false) {
+
+            ingredientes.push(ingredienteNovo);
+
+            contador++;
+
+        }         
+    }
+
+    console.log(ingredientes);
+</script>
