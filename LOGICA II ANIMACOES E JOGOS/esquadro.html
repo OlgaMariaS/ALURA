@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+
+<HTML lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <title>Alura</title>
+</head>
+
+<body>
+    <h1>PREFERENCIA</h1>
+    <canvas width="600" height="400"> </canvas>  <!-- TELA EM BRANCO PAR DESENHO com largura e altura  -->
+    <script>
+        //todos com '();' siginifica que e funcao da  API do JS
+
+        var tela = document.querySelector ('canvas');//chamando a tag canvas
+
+        var pincel = tela.getContext ('2d'); //chamando um pincel a tela e qual o formato dele 
+
+        //tela
+        pincel.fillStyle = 'white'; //estilo de preenchimento; e uma propriedade 
+                    //  X  Y  LARG  alt
+        pincel.fillRect(0, 0, 600, 400); // preencher os canvas, a partir de metodo cartesiano
+       
+        //triangulo externo
+        pincel.fillStyle = 'red'; // cor do triangulo
+        pincel.beginPath ();
+        pincel.moveTo (50,50); //inicio do triangulo
+
+        pincel.lineTo (50, 400);
+        pincel.lineTo (400, 400);
+
+        pincel.fill (); //preencher
+
+        //triangulo interno
+        pincel.fillStyle = 'white'; // cor do triangulo
+        pincel.beginPath ();
+        pincel.moveTo (100,175); //inicio do triangulo
+
+        pincel.lineTo (100, 350);
+        pincel.lineTo (275, 350);
+
+        pincel.fill (); //preencher
+
+    </script>
+</body>
+
+</HTML>
