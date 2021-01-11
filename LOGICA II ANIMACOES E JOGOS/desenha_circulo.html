@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+
+<HTML lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <title>Alura</title>
+</head>
+
+<body>
+    <canvas width="600" height="400"> </canvas>  <!-- TELA EM BRANCO PAR DESENHO com largura e altura  -->
+    <script>
+
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+    pincel.fillStyle = 'white';
+    pincel.fillRect(0, 0, 600, 400);
+
+    function desenhaCirculo(x, y, raio, cor) {
+
+        pincel.fillStyle = cor;
+        pincel.beginPath();
+        pincel.arc(x, y, raio, 0, 2*3.14);
+        pincel.fill();
+    }
+
+    function desenhandoflor () {
+        //vertical
+        desenhaCirculo (300, 160, 20, 'pink');
+        desenhaCirculo (300, 200, 20, 'darkblue');
+        desenhaCirculo (300, 240, 20, 'pink');
+        
+        //horizontal
+        desenhaCirculo (260, 200, 20, 'pink');
+        desenhaCirculo (300, 200, 20, 'darkblue');
+        desenhaCirculo (340, 200, 20, 'pink');
+  
+
+    }
+
+    desenhandoflor ();
+    </script>
+</body>
+
+</HTML>

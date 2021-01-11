@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+
+<HTML lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <title>Alura</title>
+</head>
+
+<body>
+    <canvas width="600" height="400"> </canvas>  <!-- TELA EM BRANCO PAR DESENHO com largura e altura  -->
+    <script>
+
+        var tela = document.querySelector ('canvas');
+        var pincel = tela.getContext ('2d');
+
+        function quadrado (x, y, tamanho, cor) {
+        
+            pincel.fillStyle = cor;
+            pincel.fillRect (x, y, tamanho, tamanho);
+
+            pincel.fillStroke = '';            //stroke == borda
+            pincel.strokeStyle = 'black'      //ajusta a cor da borda  
+            pincel.strokeRect (x, y, tamanho, tamanho);  //define lugar da borda
+
+        }
+        function texto (texto, x, y){
+
+            pincel.font='20px Georgia';
+            pincel.fillStyle='black';
+            pincel.fillText(texto, x, y);
+
+        }
+
+        texto ('Qual a fracao?', 25, 25)
+
+        //horizontal
+        quadrado (0,50,50, 'darkblue');
+        quadrado (50,50,50, 'darkblue');
+        quadrado (100,50,50, 'darkblue');
+        quadrado (150,50,50, 'white');
+        
+        
+     
+    </script>
+</body>
+
+</HTML>

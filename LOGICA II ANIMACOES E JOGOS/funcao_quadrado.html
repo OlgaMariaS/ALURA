@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+
+<HTML lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <title>Alura</title>
+</head>
+
+<body>
+    <canvas width="600" height="400"> </canvas>  <!-- TELA EM BRANCO PAR DESENHO com largura e altura  -->
+    <script>
+        function quadrado (x,y,cor) {
+            var tela = document.querySelector ('canvas');
+
+            var pincel = tela.getContext ('2d');
+
+            pincel.fillStyle = cor;
+            pincel.fillRect (x, y, 50, 50);
+            pincel.fillStroke = '';            //stroke == borda
+            pincel.strokeStyle = 'yellow'      //ajusta a cor da borda  
+            pincel.strokeRect (x, y, 50, 50);  //define lugar da borda
+        }
+
+        //diagonal
+        quadrado (0,0, 'purple');
+        quadrado (50,50, 'yellow');
+        quadrado (100,100, 'red');
+
+        /*vertical 
+        quadrado (0,0, 'blue');
+        quadrado (0,50, 'green');
+        quadrado (0,100, 'white');
+
+        //horizontal
+        quadrado (0,0, 'pink');
+        quadrado (50,0, 'darkblue');
+        quadrado (100,0, 'orange');
+        */
+    </script>
+</body>
+
+</HTML>
