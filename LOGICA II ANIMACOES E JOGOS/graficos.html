@@ -8,32 +8,60 @@
 </head>
 
 <body>
+    <h1>Porcentagem de alunos alura no uso de navegadores</h1>
     <canvas width="600" height="400"> </canvas> 
+
     <script>
         var tela = document.querySelector('canvas');
         var pincel = tela.getContext('2d');
-        function desenhaRetangulo (x, y, largura, altura, cor) {
-    
+   
+        function desenhaRetangulo(x, y, largura, altura, cor) {
+  
             pincel.fillStyle=cor;
             pincel.fillRect(x,y, largura, altura);
             pincel.strokeStyle='black';
             pincel.strokeRect(x,y, largura, altura);
         }
     
-        function desenhaTexto (x, y, texto) {
-
+        function desenhaTexto(x , y, texto) {
+           
             pincel.font='15px Georgia';
             pincel.fillStyle='black';
             pincel.fillText(texto, x, y);    
         }
-
-        var serie2015 = [50, 25, 20, 5];
-        var serie2016 = [65, 20, 13, 2];
-        var cores = ['blue', 'green', 'yellow', 'red'];
-
+    
         function desenhaBarra(x, y, serie, cores, texto) {
-          
+    
+            desenhaTexto(x, y - 10, texto); //texto fica acima do grafico sempre
+    
+            var somaAltura = 0; //var auxiliar para altura do grafico
+
+            for (var i = 0; i < serie.length; i++) { //a funcao le o numero da posicao no array SERIE e desenha este
+                var altura = serie[i];//tamanho e conforme a cor que esta na CORES
+                desenhaRetangulo(x, y + somaAltura, 50, altura, cores[i]);
+                somaAltura = somaAltura + altura;
+            }
         }
+
+        function desenhaLegenda (x1,y1,x2,y2,cor, texto) {
+
+            desenhaRetangulo (x1,y1,10,10, cor);//funcao criada retangulo e adiciona o texto atribuida a cor quando chamado
+            desenhaTexto (x2, y2, texto);
+        }
+
+        desenhaLegenda (250,20,270,30, 'blue', ' Chrome');
+        desenhaLegenda (250,40,270,50, 'green', ' Firefox');
+        desenhaLegenda (250,60,270,70, 'yellow', ' Safari');
+        desenhaLegenda (250,80,270,90, 'red', 'Outros');
+    
+
+        var cores = ['blue','green','yellow', 'red'];
+        var serie2015 = [50,25,20,5];
+        var serie2016 = [65,20,13,2];
+    
+        desenhaBarra(50, 50, serie2015, cores, '2015');
+        desenhaBarra(150, 50, serie2016, cores, '2016');
+    
     </script>
 </body>
 

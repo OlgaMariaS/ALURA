@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+
+<HTML lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <title>Alura</title>
+</head>
+
+<body>
+    <canvas width="600" height="400"> </canvas>  
+    <script>
+        
+        var tela = document.querySelector('canvas');
+        var pincel = tela.getContext('2d');
+
+        pincel.fillStyle = 'grey';
+        pincel.fillRect(0, 0, 600, 400);
+
+        function circulo (x, y) {
+                
+            pincel.fillStyle = ('white');
+            pincel.beginPath ();
+                //    X    Y  RAIO ANG  RADIANDO
+            pincel.arc (x, y, 10, 0,  2 * 3.14);//falando o caminho
+            pincel.fill ();//preencher
+
+        }
+
+        function exibiCirculo (evento) { //parametro evento e fornecido pelo navegador e ao clique do usuario
+
+           var x = evento.pageX - tela.offsetLeft;
+           var y = evento.pageY - tela.offsetTop;
+
+           circulo (x,y);
+        
+           console.log ( x + ',' + y);
+        }
+        
+        tela.onclick = exibiCirculo;
+    </script>
+</body>
+
+</HTML>
