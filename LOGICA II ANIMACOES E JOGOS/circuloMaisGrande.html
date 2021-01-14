@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+
+<HTML lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <title>Alura</title>
+</head>
+
+<body>
+    <canvas width="600" height="400"> </canvas>  
+    <script>      
+
+        var tela = document.querySelector('canvas');
+        var pincel = tela.getContext('2d');
+
+        pincel.fillStyle = 'grey';
+        pincel.fillRect(0, 0, 600, 400);
+
+        var raio = 10; //retirando esta var da funcao sempreque clicado no shift sera adicionado permanentemente mais 10 ao raio
+
+        function desenhaCirculo(evento) {
+
+            var x = evento.pageX - tela.offsetLeft;
+            var y = evento.pageY - tela.offsetTop;
+            
+            console.log(x + ',' + y);
+
+            if (evento.shiftKey) {
+                    raio = raio + 10;
+            }
+
+            pincel.fillStyle = 'pink';
+            pincel.beginPath();
+            pincel.arc(x, y, raio, 0, 2 * 3.14); //desenha a cada clique um circulo
+            pincel.fill();
+
+        }
+
+        tela.onclick = desenhaCirculo;
+
+    </script>
+</body>
+
+</HTML>
