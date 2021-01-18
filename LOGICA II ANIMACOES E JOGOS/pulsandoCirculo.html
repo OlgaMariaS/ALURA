@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+
+<HTML lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <title>Alura</title>
+</head>
+<body>
+    <canvas width="600" height="400"> </canvas> 
+    <script>
+        var tela = document.querySelector('canvas');//chama o canvas
+        var pincel = tela.getContext('2d');//atribui textuta a var pincel 
+        
+        pincel.fillStyle = 'white';//cor a var pincel
+        pincel.fillRect(0, 0, 600, 400);//cria um retangulo
+
+        function circulo (x, y, raio, cor) {//funcao que cria um circulo, recebendo as localidades e o raio
+            pincel.fillStyle = cor;
+            pincel.beginPath ();
+            pincel.arc (x, y, raio, 0, 2 * Math.PI);
+            pincel.fill ();
+        }
+        function limpaTela () {
+            pincel.clearRect (0, 0, 600, 400); // funcao que limpa tudo que esta na tela 
+        }
+        var x = 20;//var auxiliar, serve como inicio do circulo 
+        var sentido = 1; //var auxiliar que determina se vai para direita ou esquerda o circulo
+        var raio = 10;
+        var fatorCrescimento = 0;//var auxiliar
+
+        function atualizaTela () {
+            if( x > 600) {
+                sentido = -1
+            } else if (x < 0) {
+                sentido = 1;
+            } 
+
+            if(raio > 30) { //raio seja igual a 30 ele decrementa 
+                fatorCrescimento = -1;
+            } else if (raio < 20) {
+                fatorCrescimento = 1; // raio menor que 20 e incrementado 
+            }
+
+            limpaTela (); 
+            
+            circulo (x,40,raio, 'grey'); //e limpado a tela, criado um circulo e adiconado ao x,
+            circulo (x,100,raio, 'pink');// ou seja o circulo depois de limparTela sera em localizacao diferente
+            circulo (x,160,raio, 'orange');
+
+            x = x + sentido;
+            raio = raio + fatorCrescimento; //o valor do incremento e somado ao raio e assim da a nocao de pulsacao
+        }
+        
+        setInterval(atualizaTela, 20); 
+        //setInterval precisa de dois parâmetros para funcionar. O primeiro é a função que ela deve chamar e o segundo o intervalo de tempo no qual a função deve ser chamada.
+
+        
+    </script>
+</body>
+
+</HTML>
