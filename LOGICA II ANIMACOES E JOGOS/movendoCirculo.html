@@ -19,7 +19,7 @@
     
         var x = 20;
         var y = 20;
-    
+
         // códigos do teclado
     
         var esquerda = 37;
@@ -32,7 +32,7 @@
     
         function desenhaCirculo(x, y, raio) {
     
-            pincel.fillStyle = 'blue';
+            pincel.fillStyle = "yellow";
             pincel.beginPath();
             pincel.arc(x, y, raio, 0, 2 * Math.PI);
             pincel.fill();
@@ -48,16 +48,30 @@
             limpaTela();
             desenhaCirculo(x, y, 10);
         }
-    
+  
         setInterval(atualizaTela, 20);
     
         function leDoTeclado(evento) {
     
-            // sua lógica virá aqui
+            if(evento.keyCode == cima) {
+
+                 y = y - taxa; //evento.keyCode e o responsavel por receber o valor da tecla, e
+                               // quando indicasse o valor e subtraido ou somado para fazer a bolinha mexer se 
+            } else if (evento.keyCode == baixo) {
+
+                 y = y + taxa;
+
+            } else if (evento.keyCode == esquerda) {
+
+                 x = x - taxa;
+
+            } else if (evento.keyCode == direita) {
+
+                 x = x + taxa;
+            }
         }
-    
-     
-       document.onkeydown = leDoTeclado;
+         
+        document.onkeydown = leDoTeclado;
     
     </script>
 </body>
