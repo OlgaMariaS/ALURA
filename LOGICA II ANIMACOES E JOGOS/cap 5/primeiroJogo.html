@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+
+<HTML lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <title>Alura</title>
+</head>
+<body>
+    <canvas width="600" height="400"></canvas>
+
+    <script>
+
+        var tela = document.querySelector('canvas'); //chama a tag canvas e atribui a var tela 
+        var pincel = tela.getContext('2d'); //criado uma tela com textura
+
+        pincel.fillStyle = 'lightgray';//dado cor a tela 
+        pincel.fillRect(0, 0, 600, 400); //e tamanho, e seu pontos inicias
+
+        var raio = 10; 
+        var xAleatorio; // variaveis auxiliares
+        var yAleatorio;
+
+        function desenhaCirculo(x, y, raio, cor) {
+            //funcao responsavel por fazer um circulo, recebendo posicao, raio e cor 
+            pincel.fillStyle = cor; 
+            pincel.beginPath();
+            pincel.arc(x, y, raio, 0, 2 * Math.PI);
+            pincel.fill();
+
+        }
+
+        function limpaTela() {
+            //funcao que limpa toda a tela criada
+            pincel.clearRect(0, 0, 600, 400);
+
+        }
+
+        function desenhaAlvo(x,y) {
+            //funcao que desenha um alvo, basicamente um circulo dentro de outro, porem dois com raios maiores
+            desenhaCirculo(x, y, raio+20, 'red');
+            desenhaCirculo(x, y, raio+10, 'white');
+            desenhaCirculo(x, y, raio, 'red');
+
+        }
+
+        function sorteiaPosicao(maximo) {
+            //funcao que sorteia a posicao onde o alvo ira aleatoriamente 
+            return Math.floor(Math.random() * maximo);
+
+        }
+
+        function atualizaTela() {
+            //funcao limpa a tela, sorteia uma posicao para x e y aletoriamente para o alvo 
+            limpaTela();
+            xAleatorio = sorteiaPosicao(600);
+            yAleatorio = sorteiaPosicao(400);
+            desenhaAlvo(xAleatorio, yAleatorio);
+        }
+
+        setInterval(atualizaTela, 2000); // em intervalo de 2 segundos a atualizaTela e realizada 
+
+        function dispara(evento) {
+
+            var x = evento.pageX - tela.offsetLeft;// x/y recebem onde ocorreu o clique na tela 
+            var y = evento.pageY - tela.offsetTop;
+
+            if((x > xAleatorio - raio) //feito as condicoes, com adicao/subtracao do raio pois o usuario 
+                && (x < xAleatorio + raio) // somente acerta se clicar no centro do alvo e caso isso ocorra:
+                    && (y > yAleatorio - raio)
+                         && (y < yAleatorio + raio)) {
+
+                alert('Acertou!'); // funcao mostra ACERTOU 
+
+            }
+        }
+
+        tela.onclick = dispara; // ao clicar na tela a funcao dispara e chamada 
+
+    </script>
+    
+</body>
+</HTML>
